@@ -27,19 +27,6 @@ def startBot(username, password, url):
     # click on submit
     # driver.find_element_by_css_selector(
     #   "next-btn").click()
-    driver.close()
-    driver.quit()
+    driver.refresh()
 
 
-# Driver Code
-# Enter below your login credentials
-username = createLogin()
-password = createPassword()
-
-# URL of the login page of site
-# which you want to automate login.
-# PHISHING WEBSITE
-url = "some phishing site"
-
-# Call the function
-startBot(username, password, url)
