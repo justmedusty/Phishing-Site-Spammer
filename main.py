@@ -1,4 +1,4 @@
-from LoginRandomizer import createPassword, createLogin
+from login import startBot
 
-createLogin()
-createPassword()
+while (True):
+    startBot()

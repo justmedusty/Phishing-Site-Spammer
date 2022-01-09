@@ -7,7 +7,7 @@ import os
 # Get the path of chromedriver which you have install
 
 def startBot(username, password, url):
-    path = "C:\\Users\\Dusty\\Downloads\\chromedriver"
+    path = "C:\\Users\\Dusty\\Downloads\\chromedriver.exe"
 
     # giving the path of chromedriver to selenium webdriver
     driver = webdriver.Chrome(path)
@@ -18,15 +18,17 @@ def startBot(username, password, url):
     # find the id or name or class of
     # username by inspecting on username input
     driver.find_element_by_name(
-        "id/class/name of username").send_keys(username)
+        "email").send_keys(username)
 
     # find the password by inspecting on password input
     driver.find_element_by_name(
-        "id/class/name of password").send_keys(password)
+        "password").send_keys(password)
 
     # click on submit
-    driver.find_element_by_css_selector(
-        "id/class/name/css selector of login button").click()
+    # driver.find_element_by_css_selector(
+    #   "next-btn").click()
+    driver.close()
+    driver.quit()
 
 
 # Driver Code
@@ -36,7 +38,8 @@ password = createPassword()
 
 # URL of the login page of site
 # which you want to automate login.
-url = "Enter the URL of login page of website"
+# PHISHING WEBSITE
+url = "some phishing site"
 
 # Call the function
 startBot(username, password, url)

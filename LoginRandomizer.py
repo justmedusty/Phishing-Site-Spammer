@@ -12,7 +12,7 @@ def createPassword():
 
     temp = random.choices(all, k=length)
     finalPass = "".join(temp)
-    print(finalPass)
+    return finalPass
 
 
 # creates a random email from a short list of popular domains
@@ -25,4 +25,5 @@ def createLogin():
     all = letters + numbers
     emailHandle = random.choices(all, k=length)
     finalEmail = "".join(emailHandle) + random.choice(domainArray)
-    print(finalEmail)
+    return finalEmail
+
