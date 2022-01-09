@@ -10,7 +10,7 @@ def createPassword():
     punctuation = string.punctuation
     all = letters + numbers + punctuation
 
-    temp = random.choice(all, length)
+    temp = random.choices(all, k=length)
     finalPass = "".join(temp)
     print(finalPass)
 
@@ -23,6 +23,6 @@ def createLogin():
     letters = string.ascii_letters
     numbers = string.digits
     all = letters + numbers
-    emailHandle = random.sample(all, length)
+    emailHandle = random.choices(all, k=length)
     finalEmail = "".join(emailHandle) + random.choice(domainArray)
     print(finalEmail)
