@@ -1,7 +1,5 @@
 # Used to import the webdriver from selenium
 from selenium import webdriver
-from LoginRandomizer import createPassword, createLogin
-import os
 
 
 # Get the path of chromedriver which you have install
@@ -28,5 +26,3 @@ def startBot(username, password, url):
     # driver.find_element_by_css_selector(
     #   "next-btn").click()
     driver.refresh()
-
-
