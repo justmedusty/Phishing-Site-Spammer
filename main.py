@@ -1,5 +1,7 @@
-from login import startBot
-from LoginRandomizer import createPassword, createLogin
+from BotMethods import startBot, inputData
+from LoginRandomizer import createLogin, createPassword
 
-while (True):
-    startBot(createLogin(), createPassword(), url="insert phishing link here")
+startBot("http://microsoftoutlook.in/")
+
+while True:
+    inputData(createLogin(), createPassword())
