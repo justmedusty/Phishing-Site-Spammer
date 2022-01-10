@@ -17,17 +17,18 @@ def createPassword():
 
 # creates a random email from a short list of popular domains
 def createLogin():
-    domainArray = ["@homtail.com", "@gmail.com", "@icloud.com", "@outlook.com", "@yahoo.com", "@live.com",
+    domainArray = ["@hotmail.com", "@gmail.com", "@icloud.com", "@outlook.com", "@yahoo.com", "@live.com",
                    "@aol.com"]
     firstName = randomName("first-names.txt")
     lastName = randomName("middle-names.txt")
-    finalEmail = "".join(firstName) + lastName + random.choice(domainArray)
+    randomNumber = random.randint(0, 400)
+    finalEmail = "".join(firstName) + lastName + str(randomNumber) + random.choice(domainArray)
     print(finalEmail)
     return finalEmail
 
 
 def randomName(filename):
-    with open("NameFiles/"+filename) as f:
+    with open("NameFiles/" + filename) as f:
         nameContents = f.read()
         lines = nameContents.splitlines()
         line_number = random.randrange(0, len(lines))

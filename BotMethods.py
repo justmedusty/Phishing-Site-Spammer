@@ -4,11 +4,12 @@ from selenium import webdriver
 # Get the path of chromedriver which you have install
 from selenium.webdriver.chrome.options import Options
 
+# You must download chromedriver if you haven't (must be same version as your chrome browser)
 path = "C:\\Users\\Dusty\\Downloads\\chromedriver.exe"
 # giving the path of chromedriver to selenium webdriver
 chrome_options = Options()
 chrome_options.add_argument("--headless")
-driver = webdriver.Chrome(path)
+driver = webdriver.Chrome(path, options=chrome_options)
 
 
 def startBot(url):
@@ -29,4 +30,4 @@ def inputData(username, password):
 
     # click on submit
     # driver.find_element_by_css_selector(
-    #   "next-btn").click()
+    #   "button-id here").click()
