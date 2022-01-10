@@ -2,8 +2,12 @@
 from selenium import webdriver
 
 # Get the path of chromedriver which you have install
+from selenium.webdriver.chrome.options import Options
+
 path = "C:\\Users\\Dusty\\Downloads\\chromedriver.exe"
 # giving the path of chromedriver to selenium webdriver
+chrome_options = Options()
+chrome_options.add_argument("--headless")
 driver = webdriver.Chrome(path)
 
 
