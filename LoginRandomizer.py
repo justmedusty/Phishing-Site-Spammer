@@ -1,4 +1,3 @@
-
 import random
 import string
 
@@ -20,23 +19,16 @@ def createPassword():
 def createLogin():
     domainArray = ["@homtail.com", "@gmail.com", "@icloud.com", "@outlook.com", "@yahoo.com", "@live.com",
                    "@aol.com"]
-    firstName = randomFirstName()
-    lastName = randomLastName()
+    firstName = randomName("first-names.txt")
+    lastName = randomName("middle-names.txt")
     finalEmail = "".join(firstName) + lastName + random.choice(domainArray)
+    print(finalEmail)
     return finalEmail
 
 
-def randomFirstName():
-    with open("NameFiles/first-names.txt") as f:
-        firstNameContents = f.read()
-        lines = firstNameContents.splitlines()
-        line_number = random.randrange(0, len(lines))
-        return lines[line_number]
-
-
-def randomLastName():
-    with open("NameFiles/middle-names.txt") as f:
-        lastNameContents = f.read()
-        lines = lastNameContents.splitlines()
+def randomName(filename):
+    with open("NameFiles/"+filename) as f:
+        nameContents = f.read()
+        lines = nameContents.splitlines()
         line_number = random.randrange(0, len(lines))
         return lines[line_number]
